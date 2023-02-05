@@ -22,6 +22,9 @@ public class homebank {
 			sobrenome = entrada.next();
 			System.out.print("Insira sua idade: ");
 			idade = entrada.nextInt();
+			if (idade < 18) {
+				System.out.println("Você é menor de idade, não pode continuar com o registro!");
+			}
 			System.out.print("Insira seu e-mail: ");
 			email = entrada.next();
 			System.out.print("Insira seu CPF: ");
@@ -108,7 +111,6 @@ public class homebank {
 	    gravarArq.printf("Saldo: " + saldototal);
 	    
 	    
-
 	    arq.close();
 	    
 	    System.out.printf("\nOs dados foram gravados com sucesso em \"C:\\Users\\Administrator\\eclipse-workspace\\Projects\\src\\bank\\dados.txt");
