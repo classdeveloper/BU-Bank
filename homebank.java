@@ -2,12 +2,45 @@ package bank;
 
 import java.util.Scanner;
 
-
 public class homebank {
 	
 	public static void main(String[] args) {
 		
-		Scanner entrada = new Scanner (System.in);
+		Scanner entrada = new Scanner (System.in);		 
+		
+		System.out.println("Seja bem vindo ao BU BANK!");
+		System.out.println("Deseja se registrar? (S/N)");
+		registro = entrada.next();
+		
+		if (registro.equals("S")) {
+			System.out.print("Insira seu nome: ");
+			nome = entrada.next();
+			System.out.print("Insira seu sobrenome: ");
+			sobrenome = entrada.next();
+			System.out.print("Insira sua idade: ");
+			idade = entrada.nextInt();
+			System.out.print("Insira seu e-mail: ");
+			email = entrada.next();
+			System.out.print("Insira seu CPF: ");
+			CPF = entrada.next();
+			System.out.print("Insira sua senha: ");
+			senha = entrada.next();
+			System.out.print("Insira sua senha novamente: ");
+			confirmsenha = entrada.next();
+			
+			if (!confirmsenha.equals(senha)) {
+				System.out.println("As senhas não batem!");
+			}
+			
+			else {
+				System.out.println("Você foi registrado com sucesso!");
+			}
+			
+		}
+		
+		else if (registro.equals("N")) {
+			System.out.println("Até mais!");
+		}
 		
 		while(true){
 	        System.out.println("\n\nPAINEL DO BU BANK!");
@@ -61,6 +94,8 @@ public class homebank {
 		
 	}
 	
+	static String confirmsenha;
+	static String registro;
 	static String nome;
 	static String CPF;
 	static int idade;
@@ -69,7 +104,7 @@ public class homebank {
 	static String sobrenome;
 	static double transferencia = 0;
 	static double deposito = 0;
-	static double saldototal = (transferencia + deposito);
+	static double saldototal =  deposito;
 	static double valor = 0;
 	
 	}
