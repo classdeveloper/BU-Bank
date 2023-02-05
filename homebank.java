@@ -102,6 +102,11 @@ public class homebank {
 	    gravarArq.println("CPF: " + CPF);
 	    gravarArq.println("Senha: " + senha);
 	    
+	    gravarArq.println("-------------");
+	    
+	    gravarArq.println("Informações bancarias: ");
+	    gravarArq.printf("Saldo: " + saldototal);
+	    
 	    
 
 	    arq.close();
