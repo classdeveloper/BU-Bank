@@ -1,10 +1,13 @@
 package bank;
 
 import java.util.Scanner;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.PrintWriter;
 
 public class homebank {
 	
-	public static void main(String[] args) {
+	public static void main(String[] args) throws IOException {
 		
 		Scanner entrada = new Scanner (System.in);		 
 		
@@ -90,10 +93,26 @@ public class homebank {
 	        }
 	    }
 		
+		FileWriter arq = new FileWriter("C:\\Users\\Administrator\\eclipse-workspace\\Projects\\src\\bank\\dados.txt");
+	    PrintWriter gravarArq = new PrintWriter(arq);
+	    
+	    gravarArq.println("Name: " + nome + " " + sobrenome);
+	    gravarArq.println("Email: " + email);
+	    gravarArq.println("Idade: " + idade);
+	    gravarArq.println("CPF: " + CPF);
+	    gravarArq.println("Senha: " + senha);
+	    
+	    
+
+	    arq.close();
+	    
+	    System.out.printf("\nOs dados foram gravados com sucesso em \"C:\\Users\\Administrator\\eclipse-workspace\\Projects\\src\\bank\\dados.txt");
+		
 		entrada.close();
 		
 	}
 	
+	static Object gravarArq;
 	static String confirmsenha;
 	static String registro;
 	static String nome;

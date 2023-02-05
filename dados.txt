@@ -1,0 +1,5 @@
+Name: Erick Santana
+Email: erick.santana@gmail.com
+Idade: 18
+CPF: 102.333.044-40
+Senha: 191205
