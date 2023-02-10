@@ -9,32 +9,33 @@ public class homebank {
 	
 	public static void main(String[] args) throws IOException {
 		
-		Scanner entrada = new Scanner (System.in);		 
+		Scanner entrada = new Scanner (System.in);	
 		
-		System.out.println("Seja bem vindo ao BU BANK!");
-		System.out.println("Deseja se registrar? (S/N)");
-		registro = entrada.next();
+		System.out.println("Seja bem-vindo ao BU Bank!");
+		System.out.println("1) Registro");
+		System.out.println("2) Login");
+		Registro = entrada.nextInt();
 		
-		if (registro.equals("S")) {
+		switch (Registro) {
+		
+		case 1: 
+			
 			System.out.print("Insira seu nome: ");
-			nome = entrada.next();
+			Nome = entrada.next();
 			System.out.print("Insira seu sobrenome: ");
-			sobrenome = entrada.next();
+			Sobrenome = entrada.next();
 			System.out.print("Insira sua idade: ");
-			idade = entrada.nextInt();
-			if (idade < 18) {
-				System.out.println("Você é menor de idade, não pode continuar com o registro!");
-			}
+			Idade = entrada.nextInt();
 			System.out.print("Insira seu e-mail: ");
-			email = entrada.next();
+			Email = entrada.next();
 			System.out.print("Insira seu CPF: ");
 			CPF = entrada.next();
 			System.out.print("Insira sua senha: ");
-			senha = entrada.next();
+			Senha = entrada.next();
 			System.out.print("Insira sua senha novamente: ");
-			confirmsenha = entrada.next();
+			ConfirmSenhaRegistro = entrada.next();
 			
-			if (!confirmsenha.equals(senha)) {
+			if (!ConfirmSenhaRegistro.equals(Senha)) {
 				System.out.println("As senhas não batem!");
 			}
 			
@@ -42,10 +43,36 @@ public class homebank {
 				System.out.println("Você foi registrado com sucesso!");
 			}
 			
-		}
-		
-		else if (registro.equals("N")) {
-			System.out.println("Até mais!");
+			break;
+			
+		case 2:
+			System.out.print("Digite seu e-mail: ");
+			ConfirmEmailLogin = entrada.next();
+			System.out.println("Digite seu CPF: ");
+			ConfirmCPFLogin = entrada.next();
+			System.out.println("Digite sua senha: ");
+			ConfirmSenhaLogin = entrada.next();
+			
+			if (!ConfirmEmailLogin.equals(Email) && !ConfirmCPFLogin.equals(CPF)) {
+				
+				System.out.println("Suas credênciais estão erradas!");
+				
+			}
+			
+			else if (!ConfirmSenhaLogin.equals(Senha)) {
+				
+				System.out.println("Suas credênciais estão erradas!");
+				
+			}
+			
+			else {
+				
+				System.out.println("Você se registrou com sucesso!");
+				
+			}
+			
+			break;
+			
 		}
 		
 		while(true){
@@ -61,26 +88,26 @@ public class homebank {
 	        switch (op) {
 	        
 	        case 1: 
-	          System.out.println("\nNome: " + nome + sobrenome);
-	          System.out.println("Idade: " + idade);
-	          System.out.println("Email: " + email);
+	          System.out.println("\nNome: " + Nome + Sobrenome);
+	          System.out.println("Idade: " + Idade);
+	          System.out.println("Email: " + Email);
 	          System.out.println("CPF: " + CPF);
-	          System.out.println("Senha: " + senha);
+	          System.out.println("Senha: " + Senha);
 	          break;
 	          
 	        case 2: 
-	          System.out.println("Seu saldo é: " + saldototal);
+	          System.out.println("Seu saldo é: " + SaldoTotal);
 	          break;
 	          
 	        case 3: 
 	          System.out.println("Digite o valor do deposito: ");
-	          deposito = entrada.nextDouble();
-	          System.out.println("Seu saldo agora é de: " + saldototal);
+	          Deposito = entrada.nextDouble();
+	          System.out.println("Seu saldo agora é de: " + SaldoTotal);
 	          break;
 	          
 	        case 4:
 	          System.out.println("Digite o valor da transferência: ");
-	          transferencia = entrada.nextDouble();
+	          Transferencia = entrada.nextDouble();
 	          break;
 	          
 	        }
@@ -99,16 +126,16 @@ public class homebank {
 		FileWriter arq = new FileWriter("C:\\Users\\Administrator\\eclipse-workspace\\Projects\\src\\bank\\dados.txt");
 	    PrintWriter gravarArq = new PrintWriter(arq);
 	    
-	    gravarArq.println("Name: " + nome + " " + sobrenome);
-	    gravarArq.println("Email: " + email);
-	    gravarArq.println("Idade: " + idade);
+	    gravarArq.println("Name: " + Nome + " " + Sobrenome);
+	    gravarArq.println("Email: " + Email);
+	    gravarArq.println("Idade: " + Idade);
 	    gravarArq.println("CPF: " + CPF);
-	    gravarArq.println("Senha: " + senha);
+	    gravarArq.println("Senha: " + Senha);
 	    
 	    gravarArq.println("-------------");
 	    
 	    gravarArq.println("Informações bancarias: ");
-	    gravarArq.printf("Saldo: " + saldototal);
+	    gravarArq.printf("Saldo: " + SaldoTotal);
 	    
 	    
 	    arq.close();
@@ -119,19 +146,23 @@ public class homebank {
 		
 	}
 	
+	
+	static String ConfirmCPFLogin;
+	static String ConfirmEmailLogin;
 	static Object gravarArq;
-	static String confirmsenha;
-	static String registro;
-	static String nome;
+	static String ConfirmSenhaRegistro;
+	static String ConfirmSenhaLogin;
+	static int Registro;
+	static String Nome;
 	static String CPF;
-	static int idade;
-	static String email;
-	static String senha;
-	static String sobrenome;
-	static double transferencia = 0;
-	static double deposito = 0;
-	static double saldototal =  deposito;
-	static double valor = 0;
+	static String Email;
+	static int Idade;
+	static String Senha;
+	static String Sobrenome;
+	static double Transferencia = 0;
+	static double Deposito = 0;
+	static double SaldoTotal =  Deposito;
+	static double Valor = 0;
 	
 	}
 
