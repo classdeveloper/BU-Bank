@@ -1,5 +1,0 @@
-Name: Cleitin DuGrau
-Email: cleitin@gmail.com
-Idade: 90
-CPF: cleitin100cpf
-Senha: cleitingostoso
