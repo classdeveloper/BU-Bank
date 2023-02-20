@@ -7,7 +7,9 @@ public class home {
         Scanner entrada = new Scanner(System.in);
         variaveis variaveis = new variaveis();
 
-        System.out.println("1) Registro 2) Login");
+        System.out.println("1) Registro \n2) Login");
+
+        System.out.println("\nSeletor: ");
         variaveis.seletorRegistro = entrada.nextInt();
 
         switch (variaveis.seletorRegistro) {
