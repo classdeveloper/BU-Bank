@@ -5,11 +5,11 @@ public class variaveis {
     public int seletorPainel;
     public double valor;
     public double saldo;
-    public double saldoTotal = (saldo - valor) + deposito;
+    // public double saldoTotal = (saldo - valor) + deposito;
     public double deposito;
-    public boolean ativarRegistro;
+    public String ativarRegistro;
 
-    public boolean ativarLogin;
+    public String ativarLogin;
     public String nome;
     public String sobrenome;
     public String emailRegistro;

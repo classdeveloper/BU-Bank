@@ -9,7 +9,7 @@ public class home {
 
         System.out.println("1) Registro \n2) Login");
 
-        System.out.println("\nSeletor: ");
+        System.out.print("\nSeletor: ");
         variaveis.seletorRegistro = entrada.nextInt();
 
         switch (variaveis.seletorRegistro) {
@@ -32,7 +32,7 @@ public class home {
                 variaveis.confirmsenhaRegistro = entrada.next();
 
                 System.out.println("Deseja ativar sua conta? ");
-                variaveis.ativarRegistro = entrada.hasNext();
+                variaveis.ativarRegistro = entrada.next();
 
                 if (!variaveis.confirmsenhaRegistro.equals(variaveis.senhaRegistro)) {
 
@@ -65,7 +65,7 @@ public class home {
                 variaveis.confirmsenhaLogin = entrada.next();
 
                 System.out.println("Deseja entrar em sua conta? ");
-                variaveis.ativarLogin = entrada.hasNext();
+                variaveis.ativarLogin = entrada.next();
 
                 if (!variaveis.emailLogin.equals(variaveis.emailRegistro) && !variaveis.CPFLogin.equals(variaveis.CPFRegistro) && !variaveis.senhaLogin.equals(variaveis.senhaRegistro)) {
 
@@ -116,7 +116,7 @@ public class home {
                 break;
 
             case 3:
-                System.out.println("Seu saldo total é: " + variaveis.saldoTotal);
+                //System.out.println("Seu saldo total é: " + variaveis.saldoTotal);
                 break;
 
             case 4:
@@ -135,7 +135,7 @@ public class home {
 
        cadastro();
 
-       if (variaveis.ativarRegistro == true || variaveis.ativarLogin == true) {
+       if (variaveis.ativarRegistro.equals("sim") || variaveis.ativarLogin.equals("sim")) {
 
            painel();
 
