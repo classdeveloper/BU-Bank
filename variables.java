@@ -14,5 +14,6 @@ public class variables {
 	public static String confirmacaoBOLETO;
 	public static String boleto;
 	public static String retornar;
+	public static String transferencia;
 	
 }

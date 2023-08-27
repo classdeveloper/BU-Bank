@@ -108,6 +108,9 @@ public class home {
 				System.out.print("Insira um CPF: ");
 				variables.PIX = entrada.next();
 				
+				System.out.println("Insira o valor da transferencia: ");
+				variables.transferencia = entrada.next();
+				
 				System.out.println("Deseja mesmo realizar essa transferencia? ");
 				variables.confirmacaoPIX = entrada.next();
 				
@@ -115,17 +118,26 @@ public class home {
 					
 					System.out.println("Transferencia realizada com sucesso!");
 					
-					retornar = true;
 					
 				}
 				
 				else {
 					
-					System.out.println("Até mais!");
+					System.out.println("Deseja voltar para página inicial? ");
+					variables.retornar = entrada.next();
+					
+					if (variables.retornar.equalsIgnoreCase("sim")) {
 					
 					retornar = true;
 					
-				}
+					}
+					
+					if (variables.retornar.contentEquals("não")) {
+						
+						retornar = false;
+							
+					}
+					}
 				
 				break;
 				
